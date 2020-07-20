@@ -1,0 +1,49 @@
+{
+  "name": "duolingo_text_editor",
+  "version": "1.0.0",
+  "description": "Description for Duolingo Text Editor",
+  "private": true,
+  "scripts": {
+    "dev": "webpack-dev-server --mode development --open --display-error-details",
+    "build": "webpack --mode production"
+  },
+  "author": "wolfter12@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.14.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.6.0",
+    "file-loader": "^5.1.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.14.1",
+    "path": "^0.12.7",
+    "resolve-url-loader": "^3.1.1",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "easymde": "^2.10.1",
+    "font-awesome": "^4.7.0"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wolfter12/duolingo-text-editor.git"
+  },
+  "keywords": [
+    "duolingo",
+    "text",
+    "editor",
+    "EasyMDE",
+    "CodeMirror",
+    "comments",
+    "forum"
+  ],
+  "bugs": {
+    "url": "https://github.com/wolfter12/duolingo-text-editor/issues"
+  },
+  "homepage": "https://github.com/wolfter12/duolingo-text-editor#readme"
+}
