@@ -1,0 +1,46 @@
+@import "~easymde/dist/easymde.min.css";
+
+.containerEasyMDE {
+  width: 640px;
+}
+textarea{
+  display: block;
+}
+
+.CodeMirror{
+  padding: 15px;
+  font-size: 17px;
+  line-height: 24px;
+  background-color: #f7f7f7;
+  margin-bottom: 15px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top: 1px solid #e5e5e5;
+  border-left: 2px solid #e5e5e5;
+  border-right: 2px solid #e5e5e5;
+  border-bottom: 2px solid #e5e5e5;
+}
+
+.editor-preview {
+  padding: 15px;
+}
+
+.editor-toolbar{
+  margin-top: 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top: 2px solid #e5e5e5;
+  border-left: 2px solid #e5e5e5;
+  border-right: 2px solid #e5e5e5;
+}
+
+i.fa, i.fa::after, i.fa::before {
+  font-family: FontAwesome!important;
+}
+
+.editor-preview blockquote{
+  border-left: 5px solid #f0f0f0;
+  display: block;
+  margin: 25px;
+  padding-left: 15px;
+}
