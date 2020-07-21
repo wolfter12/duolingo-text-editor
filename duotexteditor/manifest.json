@@ -6,8 +6,7 @@
   "content_scripts": [
     {
       "matches": [
-        "http://localhost/*",
-        "https://localhost/*",
+        "http://forum.duolingo.com/*",
         "https://forum.duolingo.com/*"
       ],
       "css": [
