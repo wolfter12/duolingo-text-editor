@@ -16,12 +16,17 @@ observer.observe(targetNode, observerOptions);
 function buildEditor(textareas) {
     textareas.forEach(textarea => {
         if (!textarea.id) {
-            let id = generateID();
+            let id;
+            let newEditor;
+
+            id = generateID();
             textarea.id = id;
-            disableObserver(); // stop observing, it needs for prevent recursive loop of mutationObserver 
-            let newEditor = createEditor(id, textarea);
+            // stop observing, it needs to prevent recursive loop of mutationObserver
+            disableObserver();
+            newEditor = createEditor(id, textarea);
             editors.set(id, newEditor);
-            enableObserver(); // start observing
+            // start observing
+            enableObserver();
         }
     });
 }
@@ -133,6 +138,10 @@ function createEditor(id, element) {
         let cm = editor.codemirror;
         let lineNumber = cm.getCursor().line;
         let line = cm.getLine(lineNumber);
+        let anchor;
+        let head;
+        let text;
+        let output = "";
 
         function checkBrackets(line, anchor, head) {
             let startCh = anchor.ch;
@@ -171,12 +180,15 @@ function createEditor(id, element) {
             let wordAnchor = cm.findWordAt(options).anchor.ch;
             let wordHead = cm.findWordAt(options).head.ch;
 
-            return { anchor: { line: lineNumber, ch: wordAnchor },
-                     head: { line: lineNumber, ch: wordHead } };
+            return {
+                anchor: { line: lineNumber, ch: wordAnchor },
+                head: { line: lineNumber, ch: wordHead }
+            };
         }
 
-        let anchor;
-        let head;
+        function getSelectedText() {
+            return cm.getSelection() || "";
+        }
 
         if (cm.somethingSelected()) {
             anchor = cm.getCursor(true);
@@ -191,12 +203,11 @@ function createEditor(id, element) {
             head = getWordWithBrackets(line, anchor, head).head;
             anchor = newAnchor;
         }
-        
+
         cm.setSelection(anchor, head);
-        let selectedText = cm.getSelection();
-        let text = selectedText || "";
-        let output = ""
-        
+        text = getSelectedText();
+        output = "";
+
         if (text.length >= 2 && text.charAt(0) === "`" && text.charAt(text.length - 1) === "`") {
             output = text.slice(1, -1);
             cm.replaceSelection(output);
