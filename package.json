@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "easymde": "^2.10.1",
+    "easymde_duolingo": "github:wolfter12/easy-markdown-editor#86292b5f2ba5a868c60c0066e52f2d32812c5d17",
     "font-awesome": "^4.7.0"
   },
   "main": "index.js",
