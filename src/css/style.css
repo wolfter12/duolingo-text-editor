@@ -1,4 +1,4 @@
-@import "~easymde/dist/easymde.min.css";
+@import "~easymde_duolingo/dist/easymde.min.css";
 
 .containerEasyMDE {
   width: 640px;
@@ -38,9 +38,26 @@ i.fa, i.fa::after, i.fa::before {
   font-family: FontAwesome!important;
 }
 
+.editor-preview {
+  color: #4c4c4c;
+}
+
 .editor-preview blockquote{
   border-left: 5px solid #f0f0f0;
   display: block;
   margin: 25px;
   padding-left: 15px;
+}
+
+.cm-s-easymde .cm-comment, .editor-preview code {
+  background-color: #fff277;  
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.cm-s-easymde .cm-header-2, .editor-preview h2 {
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 500;
+  margin: 0, 0, 18px;
 }
