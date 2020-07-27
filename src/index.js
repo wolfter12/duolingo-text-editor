@@ -2,7 +2,7 @@
 
 import "./css/style.css";
 
-let EasyMDE = require("easymde");
+let EasyMDE = require("easymde_duolingo");
 let editors = new Map();
 const targetNode = document.querySelector("#root");
 const observerOptions = {
@@ -25,7 +25,6 @@ function buildEditor(textareas) {
             disableObserver();
             newEditor = createEditor(id, textarea);
             editors.set(id, newEditor);
-            // start observing
             enableObserver();
         }
     });
@@ -95,34 +94,47 @@ function createEditor(id, element) {
         },
         blockStyles: {
             bold: "**",
+            code: "`",
             italic: "_",
         },
         insertTexts: {
-            horizontalRule: ["\n---\n"]
+            horizontalRule: ['', '\n- - -\n']
         },
         toolbar: [
             "bold",
             "italic",
             "strikethrough",
             "|",
-            "heading",
+            {
+                name: "headers",
+                className: "fa fa-header fa-heading",
+                title: "Headers",
+                children: [
+                    "heading-1",
+                    "heading-2",
+                    "heading-3",
+                    "heading-4",
+                    "heading-5",
+                    "heading-6"
+                ]
+            },
             "heading-smaller",
             "heading-bigger",
             "|",
             "quote",
-            "unordered-list",
-            "ordered-list",
-            "|",
-            "link",
-            "image",
-            "|",
             {
                 name: "highlight",
-                action: highlightedText,
+                action: EasyMDE.toggleCodeBlock,
                 className: "fa fa-pencil",
                 title: "Highlight"
             },
+            "|",
+            "unordered-list",
+            "ordered-list",
             "horizontal-rule",
+            "|",
+            "link",
+            "image",
             "|",
             "undo",
             "redo",
@@ -132,94 +144,6 @@ function createEditor(id, element) {
         spellChecker: false,
         status: false,
     });
-
-    // TODO: Simplify the function
-    function highlightedText(editor) {
-        let cm = editor.codemirror;
-        let lineNumber = cm.getCursor().line;
-        let line = cm.getLine(lineNumber);
-        let anchor;
-        let head;
-        let text;
-        let output = "";
-
-        function checkBrackets(line, anchor, head) {
-            let startCh = anchor.ch;
-            let endCh = head.ch;
-
-            if (line.charAt(startCh - 1) === "`" && line.charAt(endCh) === "`") {
-                return true;
-            }
-            return false;
-        }
-
-        function getWordWithBrackets(line, anchor, head) {
-            let startLine = anchor.line;
-            let endLine = head.line;
-            let startCh = anchor.ch;
-            let endCh = head.ch;
-
-            while (startCh !== 0 && line.charAt(startCh - 1) !== " ") {
-                startCh--;
-            }
-
-            while (endCh !== line.length && line.charAt(endCh) !== " ") {
-                endCh++;
-            }
-
-            return {
-                anchor: { line: startLine, ch: startCh },
-                head: { line: endLine, ch: endCh }
-            };
-        }
-
-        function getRangeUnderCursor() {
-            let lineNumber = cm.getCursor().line;
-            let charNumber = cm.getCursor().ch;
-            let options = { line: lineNumber, ch: charNumber };
-            let wordAnchor = cm.findWordAt(options).anchor.ch;
-            let wordHead = cm.findWordAt(options).head.ch;
-
-            return {
-                anchor: { line: lineNumber, ch: wordAnchor },
-                head: { line: lineNumber, ch: wordHead }
-            };
-        }
-
-        function getSelectedText() {
-            return cm.getSelection() || "";
-        }
-
-        if (cm.somethingSelected()) {
-            anchor = cm.getCursor(true);
-            head = cm.getCursor(false);
-        } else {
-            anchor = getRangeUnderCursor().anchor;
-            head = getRangeUnderCursor().head;
-        }
-
-        if (checkBrackets(line, anchor, head)) {
-            let newAnchor = getWordWithBrackets(line, anchor, head).anchor;
-            head = getWordWithBrackets(line, anchor, head).head;
-            anchor = newAnchor;
-        }
-
-        cm.setSelection(anchor, head);
-        text = getSelectedText();
-        output = "";
-
-        if (text.length >= 2 && text.charAt(0) === "`" && text.charAt(text.length - 1) === "`") {
-            output = text.slice(1, -1);
-            cm.replaceSelection(output);
-            head.ch = head.ch - 2;
-        } else {
-            output = "`" + text + "`";
-            cm.replaceSelection(output);
-            anchor.ch = anchor.ch + 1;
-            head.ch = head.ch + 1;
-        }
-        cm.setSelection(anchor, head);
-    }
 
     // TODO: Check if "UIEvents" is the most optimal option
     easyMDE.codemirror.on("change", function () {
