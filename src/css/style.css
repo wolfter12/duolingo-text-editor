@@ -1,16 +1,11 @@
 @import "~easymde_duolingo/dist/easymde.min.css";
+/* BASICS */
 
-.containerEasyMDE {
-  width: 640px;
-}
-textarea{
-  display: block;
-}
-
-.CodeMirror{
+.CodeMirror {
   padding: 15px;
   font-size: 17px;
   line-height: 24px;
+  font-family: din-round, sans-serif;
   background-color: #f7f7f7;
   margin-bottom: 15px;
   border-bottom-left-radius: 5px;
@@ -21,11 +16,21 @@ textarea{
   border-bottom: 2px solid #e5e5e5;
 }
 
-.editor-preview {
-  padding: 15px;
+/* PADDING */
+
+.CodeMirror-lines {
+  padding: 0;
+  /* Vertical padding around content */
 }
 
-.editor-toolbar{
+.CodeMirror pre.CodeMirror-line, .CodeMirror pre.CodeMirror-line-like {
+  padding: 0;
+  /* Horizontal padding of content */
+}
+
+/* TOOLBAR */
+
+.editor-toolbar {
   margin-top: 15px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -38,26 +43,125 @@ i.fa, i.fa::after, i.fa::before {
   font-family: FontAwesome!important;
 }
 
+/* PREVIEW THEME */
+
 .editor-preview {
+  padding: 15px;
   color: #4c4c4c;
 }
 
-.editor-preview blockquote{
+.editor-preview p {
+  margin: 0 0 15px 0;
+}
+
+.editor-preview strong {
+  font-weight: 700;
+}
+
+.editor-preview blockquote {
   border-left: 5px solid #f0f0f0;
   display: block;
   margin: 25px;
   padding-left: 15px;
 }
 
-.cm-s-easymde .cm-comment, .editor-preview code {
-  background-color: #fff277;  
+.editor-preview code {
+  background-color: #fff277;
   font-family: monospace, monospace;
   font-size: 1em;
 }
 
-.cm-s-easymde .cm-header-2, .editor-preview h2 {
+.editor-preview h1 {
   font-size: 24px;
+  font-weight: 700;
+  line-height: 26px;
+  margin: 0 0 25px 0;
+}
+
+.editor-preview h2 {
+  color: #4c4c4c;
+  font-size: 24px;
+  font-weight: 700;
   line-height: 1;
-  font-weight: 500;
-  margin: 0, 0, 18px;
+  margin: 0 0 18px 0;
+}
+
+.editor-preview h3 {
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+}
+
+.editor-preview h4 {
+  color: #4c4c4c;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+
+.editor-preview h5 {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+
+.editor-preview h6 {
+  color: #999;
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.editor-preview ul {
+  list-style-type: disc;
+  margin: 0 0 20px 20px;
+}
+
+.editor-preview ol {
+  list-style-type: decimal;
+  margin-left: 20px;
+}
+
+/* STOP */
+
+.CodeMirror-selected {
+  background: #C5C5C5;
+  color: black;
+}
+
+.CodeMirror-focused .CodeMirror-selected, span.CodeMirror-selectedtext, .CodeMirror-line::selection, .CodeMirror-line>span::selection, .CodeMirror-line>span>span::selection {
+  background: #318EFD;
+  color: white;
+}
+
+/* DUOLINGO EDITOR THEME */
+
+.cm-s-duolingo .cm-header, .cm-s-duolingo .cm-header-1, .cm-s-duolingo .cm-header-2, .cm-s-duolingo .cm-header-3, .cm-s-duolingo .cm-header-4, .cm-s-duolingo .cm-header-5, .cm-s-duolingo .cm-header-6, .cm-s-duolingo .cm-quote, .cm-s-duolingo .cm-comment, .cm-s-duolingo .cm-hr, .cm-s-duolingo .cm-link {
+  background: inherit;
+  border: none;
+  color: black;
+  font-family: din-round, sans-serif;
+  font-style: normal;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 24px;
+  text-decoration: none;
+}
+
+.cm-header, .cm-strong {
+  font-weight: normal;
+}
+
+.cm-em {
+  font-style: normal;
+}
+
+.cm-link {
+  text-decoration: none;
+}
+
+.cm-strikethrough {
+  text-decoration: none;
 }
