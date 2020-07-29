@@ -73,6 +73,18 @@ function createEditor(id, element) {
       "|",
       "unordered-list",
       "ordered-list",
+      "|",
+      {
+        name: "new-line",
+        action: function addNewLine(editor) {
+          const cm = editor.codemirror;
+          const newLine = "  \n";
+          cm.replaceSelection(newLine);
+          cm.focus();
+        },
+        className: "fa fa-level-down rotate-90",
+        title: "New line",
+      },
       "horizontal-rule",
       "|",
       "link",
