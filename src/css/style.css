@@ -51,6 +51,7 @@ i.fa, i.fa::after, i.fa::before {
 
 .editor-preview {
   padding: 15px;
+  background: white;
   color: #4c4c4c;
 }
 
