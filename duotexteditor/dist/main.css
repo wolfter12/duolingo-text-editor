@@ -49,6 +49,10 @@ i.fa, i.fa::after, i.fa::before {
   font-family: FontAwesome!important;
 }
 
+.rotate-90 {
+  transform: rotate(90deg);
+}
+
 /* PREVIEW THEME */
 
 .editor-preview {
