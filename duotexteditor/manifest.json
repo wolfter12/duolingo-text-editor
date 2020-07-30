@@ -14,7 +14,6 @@
         "dist/main.css"
       ],
       "js": [
-        "content.js",
         "dist/main.js"
       ]
     }
@@ -30,7 +29,6 @@
     "default_popup": "popup.html"
   },
   "permissions": [
-    "contextMenus",
     "activeTab",
     "tabs",
     "webNavigation",
