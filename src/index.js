@@ -41,6 +41,9 @@ function createEditor(id, element) {
     insertTexts: {
       horizontalRule: ["", "\n- - -\n"],
     },
+    renderingConfig: {
+      singleLineBreaks: false,
+    },
     theme: "duolingo",
     toolbar: [
       "bold",
