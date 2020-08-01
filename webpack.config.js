@@ -1,6 +1,6 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-// const CopyWebpackPlugin = require("copy-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const TerserJSPlugin = require("terser-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
@@ -22,18 +22,18 @@ const optimization = () => {
 const plugins = () => {
   const base = [
     new MiniCssExtractPlugin(),
-    // new CopyWebpackPlugin(
-    //   [
-    //     {
-    //       from: path.resolve(__dirname, "src/css/font-awesome/font-awesome.min.css"),
-    //       to: path.resolve(__dirname, "dist/css"),
-    //     },
-    //     {
-    //       from: path.resolve(__dirname, "src/assets/fonts"),
-    //       to: path.resolve(__dirname, "dist/fonts"),
-    //     },
-    //   ],
-    // ),
+    new CopyWebpackPlugin(
+      [
+        {
+          from: path.resolve(__dirname, "src/css/font-awesome/font-awesome.min.css"),
+          to: path.resolve(__dirname, "duotexteditor/css"),
+        },
+        {
+          from: path.resolve(__dirname, "src/fonts"),
+          to: path.resolve(__dirname, "duotexteditor/fonts"),
+        },
+      ],
+    ),
   ];
 
   // if (isProd) {
