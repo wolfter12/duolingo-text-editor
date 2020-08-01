@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Duolingo Text Editor",
   "version": "0.1",
-  "description": "Description for Duolingo Text Editor",
+  "description": "Simplifies the formatting of comments and posts. Provides a preview.",
   "content_scripts": [
     {
       "matches": [
@@ -10,7 +10,7 @@
         "https://forum.duolingo.com/*"
       ],
       "css": [
-        "styles/font-awesome.min.css",
+        "css/font-awesome.min.css",
         "dist/main.css"
       ],
       "js": [
@@ -24,10 +24,6 @@
       "background.js"
     ]
   },
-  "browser_action": {
-    "default_title": "Duoling Text Editor for editing text on duo.com",
-    "default_popup": "popup.html"
-  },
   "permissions": [
     "activeTab",
     "tabs",
@@ -36,11 +32,17 @@
     "https://*/"
   ],
   "web_accessible_resources": [
-    "assets/fonts/FontAwesome.otf",
-    "assets/fonts/fontawesome-webfont.eot",
-    "assets/fonts/fontawesome-webfont.svg",
-    "assets/fonts/fontawesome-webfont.ttf",
-    "assets/fonts/fontawesome-webfont.woff",
-    "assets/fonts/fontawesome-webfont.woff2"
-  ]
+    "fonts/FontAwesome.otf",
+    "fonts/fontawesome-webfont.eot",
+    "fonts/fontawesome-webfont.svg",
+    "fonts/fontawesome-webfont.ttf",
+    "fonts/fontawesome-webfont.woff",
+    "fonts/fontawesome-webfont.woff2"
+  ],
+  "icons": {
+    "16": "icons/icon_16.png",
+    "48": "icons/icon_48.png",
+    "128": "icons/icon_128.png",
+    "256": "icons/icon_256.png"
+  }
 }
