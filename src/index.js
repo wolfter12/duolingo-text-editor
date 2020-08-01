@@ -98,6 +98,23 @@ function createEditor(id, element) {
       "|",
       "preview",
     ],
+
+    shortcuts: {
+      toggleBold: null,
+      toggleItalic: null,
+      drawLink: null,
+      toggleHeadingSmaller: null,
+      toggleHeadingBigger: null,
+      cleanBlock: null,
+      drawImage: null,
+      toggleBlockquote: null,
+      toggleOrderedList: null,
+      toggleUnorderedList: null,
+      toggleCodeBlock: null,
+      togglePreview: null,
+      toggleSideBySide: null,
+      toggleFullScreen: null,
+    },
     spellChecker: false,
     status: false,
   });
