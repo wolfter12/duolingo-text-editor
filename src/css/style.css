@@ -77,10 +77,19 @@ i.fa, i.fa::after, i.fa::before {
 }
 
 .editor-preview h1 {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 26px;
-  margin: 0 0 25px 0;
+  font-size: 17px;
+  font-weight: 400;
+  font-family: din-round, sans-serif;
+  line-height: 22px;
+  margin: 0;
+}
+
+.editor-preview h1::before {
+  content: "<h1>";
+}
+
+.editor-preview h1::after {
+  content: "<h1>";
 }
 
 .editor-preview h2 {
