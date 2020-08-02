@@ -33,7 +33,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "easymde_duolingo": "github:wolfter12/easy-markdown-editor#4e0c1014a69e6193d19b10cb6174b2c61f051ab4",
+    "easymde_duolingo": "github:wolfter12/easy-markdown-editor#duolingo",
     "font-awesome": "^4.7.0"
   },
   "main": "index.js",
