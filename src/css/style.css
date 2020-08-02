@@ -153,15 +153,18 @@ i.fa, i.fa::after, i.fa::before {
 /* DUOLINGO EDITOR THEME */
 
 .cm-s-duolingo .cm-header, .cm-s-duolingo .cm-header-1, .cm-s-duolingo .cm-header-2, .cm-s-duolingo .cm-header-3, .cm-s-duolingo .cm-header-4, .cm-s-duolingo .cm-header-5, .cm-s-duolingo .cm-header-6, .cm-s-duolingo .cm-quote, .cm-s-duolingo .cm-comment, .cm-s-duolingo .cm-hr, .cm-s-duolingo .cm-link {
-  background: inherit;
   border: none;
-  color: black;
   font-family: din-round, sans-serif;
   font-style: normal;
   font-size: 17px;
   font-weight: 400;
   line-height: 24px;
   text-decoration: none;
+}
+
+.cm-s-duolingo .cm-header::selection, .cm-s-duolingo .cm-header-1::selection, .cm-s-duolingo .cm-header-2::selection, .cm-s-duolingo .cm-header-3::selection, .cm-s-duolingo .cm-header-4::selection, .cm-s-duolingo .cm-header-5::selection, .cm-s-duolingo .cm-header-6::selection, .cm-s-duolingo .cm-quote::selection, .cm-s-duolingo .cm-comment::selection, .cm-s-duolingo .cm-hr::selection, .cm-s-duolingo .cm-link::selection {
+  background: #318EFD;
+  color: white;
 }
 
 .cm-header, .cm-strong {
