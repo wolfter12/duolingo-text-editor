@@ -18,19 +18,6 @@
       ]
     }
   ],
-  "background": {
-    "persistent": true,
-    "scripts": [
-      "background.js"
-    ]
-  },
-  "permissions": [
-    "activeTab",
-    "tabs",
-    "webNavigation",
-    "http://*/",
-    "https://*/"
-  ],
   "web_accessible_resources": [
     "fonts/FontAwesome.otf",
     "fonts/fontawesome-webfont.eot",
