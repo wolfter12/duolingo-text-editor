@@ -55,7 +55,6 @@ function createEditor(id, element) {
         className: "fa fa-header fa-heading",
         title: "Headers",
         children: [
-          "heading-1",
           "heading-2",
           "heading-3",
           "heading-4",
@@ -63,10 +62,6 @@ function createEditor(id, element) {
           "heading-6",
         ],
       },
-      "heading-smaller",
-      "heading-bigger",
-      "|",
-      "quote",
       {
         name: "highlight",
         action: EasyMDE.toggleCodeBlock,
@@ -74,6 +69,7 @@ function createEditor(id, element) {
         title: "Highlight",
       },
       "|",
+      "quote",
       "unordered-list",
       "ordered-list",
       "|",
@@ -85,7 +81,7 @@ function createEditor(id, element) {
           cm.replaceSelection(newLine);
           cm.focus();
         },
-        className: "fa fa-level-down rotate-90",
+        className: "fa fa-paragraph",
         title: "New line",
       },
       "horizontal-rule",
@@ -98,7 +94,6 @@ function createEditor(id, element) {
       "|",
       "preview",
     ],
-
     shortcuts: {
       toggleBold: null,
       toggleItalic: null,
