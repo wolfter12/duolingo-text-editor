@@ -5,6 +5,13 @@
 
 A browser extension that provides easy and fast editing and formatting of comments or posts on [Duolingo](https://forum.duolingo.com).
 
+### Table of contents
+
+- [Description](#description)
+- [Features](#features)
+- [Download](#download)
+- [Screenshots](#screenshots)
+
 ### Description
 
 Writing comments or posts will be easy with the Duolingo Text Editor. You no longer need to memorize a bunch of rules for formatting code.
