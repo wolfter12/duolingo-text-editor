@@ -1,8 +1,15 @@
-# Duolingo Text Editor
+<h1>
+  <img align="center" width="48" height="48" src="duotexteditor/icons/icon_48.png" />
+  Duolingo Text Editor
+</h1>
 
-Chrome extension for duolingo.com. It simplifies the process of commenting and formatting comments.
+A browser extension that provides easy and fast editing and formatting of comments or posts on [Duolingo](https://forum.duolingo.com).
+
+### Description
 
 Writing comments or posts will be easy with the Duolingo Text Editor. You no longer need to memorize a bunch of rules for formatting code.
+
+### Features
 
 The main features of the editor:
 - Bold
@@ -24,9 +31,21 @@ The main features of the editor:
 - Redo
 - Preview!
 
-![duoling text editor](screenshots/screenshot-5.jpg)
-
 ### Download  
 
 - [Chrome extension](https://chrome.google.com/webstore/detail/duolingo-text-editor/lminlegkokddakonaglakjgailkoaeak?hl=en-US)
 - [Firefox add-on](https://addons.mozilla.org/en-US/firefox/addon/duolingo-text-editor/)
+
+### Screenshots
+
+![duoling text editor](screenshots/screenshot-3.jpg)  
+![duoling text editor](screenshots/screenshot-4.jpg)
+
+- - -
+
+![duoling text editor](screenshots/screenshot-2.jpg)  
+![duoling text editor](screenshots/screenshot-1.jpg)
+
+- - - 
+
+![duoling text editor](screenshots/screenshot-5.jpg)
