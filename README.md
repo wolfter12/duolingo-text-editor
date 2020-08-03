@@ -26,12 +26,7 @@ The main features of the editor:
 
 ![duoling text editor](screenshots/screenshot-5.jpg)
 
-### How to use
+### Download  
 
-##### Follow the steps to load the unpacked extension.
-1. Goto Chrome Settings using three dots on the top right corner.
-2. Now, Enable developer mode.
-3. Click on Load Unpacked and select your Unzip folder. Note: You need to select the folder in which the manifest file exists. The folder name is `duotexteditor`.
-4. The extension will be installed now.
-
-![chrome extension](screenshots/screenshot-6.jpg)
+- [Chrome extension](https://chrome.google.com/webstore/detail/duolingo-text-editor/lminlegkokddakonaglakjgailkoaeak?hl=en-US)
+- [Firefox add-on](https://addons.mozilla.org/en-US/firefox/addon/duolingo-text-editor/)
