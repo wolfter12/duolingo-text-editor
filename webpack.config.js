@@ -46,13 +46,17 @@ const plugins = () => {
 const conf = {
   context: path.resolve(__dirname, "src"),
   mode: "development",
-  entry: "./index.js",
+  entry: path.resolve(__dirname, "src/js/index.js"),
   output: {
     path: path.resolve(__dirname, "./duotexteditor/dist"),
     filename: "main.js",
     publicPath: "dist/",
   },
   optimization: optimization(),
+  devServer: {
+    contentBase: path.join(__dirname, "example"),
+    port: 4444,
+  },
   module: {
     rules: [
       // {
