@@ -1,4 +1,6 @@
 @import "~easymde_duolingo/dist/easymde.min.css";
+/* FIXME: heading + highlighted text combined formating displays wrong */
+
 /* BASICS */
 
 .CodeMirror {
