@@ -59,13 +59,14 @@ const conf = {
   },
   module: {
     rules: [
-      // {
-      //     test: /\.css$/,
-      //     use: [
-      //         'style-loader',
-      //         'css-loader'
-      //     ]
-      // },
+      {
+        test: /\.(scss|css)$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "sass-loader",
+        ],
+      },
       {
         test: /\.(woff|woff2|ttf|eot|svg)$/,
         use: [
@@ -79,10 +80,9 @@ const conf = {
         ],
       },
       {
-        test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader, "css-loader",
-        ],
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader",
       },
     ],
   },
