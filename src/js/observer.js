@@ -15,8 +15,6 @@ export default class Observer {
   start() {
     if (this.observer) {
       this.observer.observe(this.targetNode, this.options);
-    } else {
-      return new Error("Observer is empty");
     }
     return this;
   }
