@@ -14,7 +14,10 @@ export default function onMutation(mutations) {
       if (node.tagName === "TEXTAREA") {
         ADDED_TEXTAREAS.push(node);
       } else if (node.firstElementChild) {
-        ADDED_TEXTAREAS.push(...node.getElementsByTagName("textarea"));
+        const elements = node.getElementsByTagName("textarea");
+        if (elements.length) {
+          ADDED_TEXTAREAS.push([...elements].pop());
+        }
       }
     });
     mutation.removedNodes.forEach((node) => {
