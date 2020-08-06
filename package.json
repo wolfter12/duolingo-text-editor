@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "webpack --config dev.config.js",
     "build": "webpack --config prod.config.js",
-    "start": "webpack-dev-server --config start.config.js --open",
     "stats": "webpack --json > stats.json && webpack-bundle-analyzer stats.json"
   },
   "author": "wolfter12@gmail.com",
