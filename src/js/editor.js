@@ -83,6 +83,7 @@ export default function createEditor(id, element) {
       code: "`",
       italic: "_",
     },
+    indentWithTabs: false,
     insertTexts: {
       horizontalRule: ["", "\n- - -\n"],
     },
