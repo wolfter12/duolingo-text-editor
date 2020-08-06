@@ -8,3 +8,4 @@
 // COMPLETE: add babel
 // TODO: add normalizer
 // TODO: transfer from css to scss
+// TODO: replace adding IDs with data attributes
