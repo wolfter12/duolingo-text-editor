@@ -62,6 +62,8 @@ i.fa::before {
 
 .editor-preview p {
   margin: 0 0 15px 0;
+  font-size: 17px;
+  line-height: 22px;
 }
 
 .editor-preview strong {
@@ -141,6 +143,22 @@ i.fa::before {
 .editor-preview ol {
   list-style-type: decimal;
   margin-left: 20px;
+}
+
+.editor-preview pre {
+  font-size: 17px;
+  line-height: 22px;
+  background: white;
+  white-space: normal;
+  margin: 0;
+}
+
+.editor-preview pre::before {
+  content: "<pre>";
+}
+
+.editor-preview pre::after {
+  content: "<pre>";
 }
 
 /* STOP */
