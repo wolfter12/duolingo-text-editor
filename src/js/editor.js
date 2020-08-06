@@ -1,4 +1,4 @@
-import "../css/style.css";
+import "../scss/style.scss";
 
 const EasyMDE = require("easymde_duolingo");
 
