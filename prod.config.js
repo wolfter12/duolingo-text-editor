@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
@@ -44,13 +45,14 @@ const conf = {
   optimization: optimization(),
   module: {
     rules: [
-      // {
-      //     test: /\.css$/,
-      //     use: [
-      //         'style-loader',
-      //         'css-loader'
-      //     ]
-      // },
+      {
+        test: /\.(scss|css)$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "sass-loader",
+        ],
+      },
       {
         test: /\.(woff|woff2|ttf|eot|svg)$/,
         use: [
@@ -63,12 +65,12 @@ const conf = {
           },
         ],
       },
-      {
-        test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader, "css-loader",
-        ],
-      },
+      // {
+      //   test: /\.css$/,
+      //   use: [
+      //     MiniCssExtractPlugin.loader, "css-loader",
+      //   ],
+      // },
     ],
   },
   plugins: plugins(),
