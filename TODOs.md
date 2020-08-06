@@ -3,7 +3,7 @@
 // FIXME: first comment editor does not auto clean after click submit button
 // FIXME: heading + highlighted code formatting
 // FIXME: Tabs => code block
-// FIXME: pre code block formatting, 
+// COMPLETE: pre code block formatting, 
 // FIXME: duplication of focus on post creating page
 // COMPLETE: reply autofocus
 // COMPLETE: add babel
