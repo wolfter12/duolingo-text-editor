@@ -6,3 +6,4 @@
 // TODO: add babel
 // TODO: add normalizer
 // TODO: transfer from css to scss
+// TODO: move font-awesome to style.css
