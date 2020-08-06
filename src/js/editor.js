@@ -74,6 +74,7 @@ export default function createEditor(id, element) {
     element: document.querySelector(`#${id}`),
     autoDownloadFontAwesome: false,
     forceSync: true,
+    autofocus: true,
     autosave: {
       enabled: false,
     },
