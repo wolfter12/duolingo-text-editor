@@ -7,6 +7,6 @@ const observerOptions = {
   subtree: true,
 };
 
-const observer = new Observer(targetNode, observerOptions, onMutation);
+const observer = new Observer(targetNode, observerOptions);
 
-observer.start();
+observer.stopAndRun(onMutation).start();
