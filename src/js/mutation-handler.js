@@ -1,7 +1,5 @@
 import EditorsManager from "./editors-manager";
 
-console.log("mutation-hadler");
-
 const editorsManager = new EditorsManager();
 
 export default function onMutation(mutations) {
