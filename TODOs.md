@@ -1,11 +1,12 @@
 // BUG: firefox third editor without toolbar
 // COMPLETE: post title editor is superflous, remove it
-// FIXME: first comment editor does not auto clean after click submit button
+// COMPLETE: first comment editor does not auto clean after click submit button
 // COMPLETE: Tabs => code block
 // COMPLETE: pre code block formatting, 
-// FIXME: duplication of focus on post creating page
+// COMPLETE: duplication of focus on post creating page
 // COMPLETE: reply autofocus
 // COMPLETE: add babel
+// FIXME: editor top edge when it focusing
 // TODO: add normalizer
 // TODO: transfer from css to scss
 // TODO: replace adding IDs with data attributes
