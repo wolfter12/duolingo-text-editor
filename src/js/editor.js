@@ -1,8 +1,12 @@
 import "../scss/style.scss";
 
+import clearEditorOnSubmit from "./on-submit";
+
 const EasyMDE = require("easymde_duolingo");
 
 export default function createEditor(id, element) {
+  const target = document.querySelector(`#${id}`);
+
   const duolingoToolbar = [
     "bold",
     "italic",
@@ -71,10 +75,10 @@ export default function createEditor(id, element) {
   };
 
   const easyMDE = new EasyMDE({
-    element: document.querySelector(`#${id}`),
+    element: target,
     autoDownloadFontAwesome: false,
     forceSync: true,
-    autofocus: true,
+    // autofocus: true,
     autosave: {
       enabled: false,
     },
@@ -104,6 +108,14 @@ export default function createEditor(id, element) {
     event.initUIEvent("change", true, true);
     element.dispatchEvent(event);
   });
+
+  function clearEditor() {
+    easyMDE.codemirror.setValue("");
+  }
+
+  clearEditorOnSubmit(target, clearEditor);
+
+  easyMDE.codemirror.focus();
 
   return easyMDE;
 }
