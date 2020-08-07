@@ -1,7 +1,5 @@
 import createEditor from "./editor";
 
-console.log("editors-manager");
-
 export default class EditorsManager {
   constructor() {
     this.editors = new Map();
@@ -10,7 +8,6 @@ export default class EditorsManager {
   addEditor(textareas) {
     textareas.forEach((textarea) => {
       if (!textarea.id) {
-        console.log("add editor", this.editors);
         const id = `ta${Date.now()}`;
         // eslint-disable-next-line no-param-reassign
         textarea.id = id;
@@ -23,7 +20,6 @@ export default class EditorsManager {
   removeEditor(textareas) {
     textareas.forEach((textarea) => {
       if (this.editors.has(textarea.id)) {
-        console.log("remove editor", this.editors);
         this.editors.delete(textarea.id);
       }
     });
