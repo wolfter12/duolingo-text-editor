@@ -111,6 +111,7 @@ export default function createEditor(id, element) {
 
   function clearEditor() {
     easyMDE.codemirror.setValue("");
+    easyMDE.codemirror.clearHistory();
   }
 
   clearEditorOnSubmit(target, clearEditor);
