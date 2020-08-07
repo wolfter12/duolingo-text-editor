@@ -1,15 +1,26 @@
 export default class Observer {
-  constructor(targetNode, options, callback) {
+  constructor(targetNode, options) {
     this.targetNode = targetNode;
     this.options = options;
-    this.callback = callback;
+    this.observer = null;
+  }
+
+  runAndStop(callback) {
     this.observer = new MutationObserver((mutations) => {
-      if (this.callback) {
-        this.stop();
-        this.callback(mutations);
-        this.start();
-      }
+      this.start();
+      callback(mutations);
+      this.stop();
     });
+    return this;
+  }
+
+  stopAndRun(callback) {
+    this.observer = new MutationObserver((mutations) => {
+      this.stop();
+      callback(mutations);
+      this.start();
+    });
+    return this;
   }
 
   start() {
