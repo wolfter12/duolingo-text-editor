@@ -7,12 +7,12 @@ export default class EditorsManager {
 
   addEditor(textareas) {
     textareas.forEach((textarea) => {
-      if (!textarea.id) {
-        const id = `ta${Date.now()}`;
+      if (!textarea.dataset.editorId) {
+        const dataEditorId = `ta${Date.now()}`;
         // eslint-disable-next-line no-param-reassign
-        textarea.id = id;
+        textarea.dataset.editorId = dataEditorId;
         const newEditorOptions = {
-          id,
+          dataEditorId,
           element: textarea,
           focus: false,
         };
@@ -20,15 +20,15 @@ export default class EditorsManager {
           newEditorOptions.focus = true;
         }
         createEditor(newEditorOptions);
-        this.editors.set(id, textarea);
+        this.editors.set(dataEditorId, textarea);
       }
     });
   }
 
   removeEditor(textareas) {
     textareas.forEach((textarea) => {
-      if (this.editors.has(textarea.id)) {
-        this.editors.delete(textarea.id);
+      if (this.editors.has(textarea.dataset.editorID)) {
+        this.editors.delete(textarea.dataset.editorID);
       }
     });
   }

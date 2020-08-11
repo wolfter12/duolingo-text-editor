@@ -5,7 +5,7 @@ import clearEditorOnSubmit from "./on-submit";
 const EasyMDE = require("easymde_duolingo");
 
 export default function createEditor(editorOptions) {
-  const target = document.querySelector(`#${editorOptions.id}`);
+  const target = document.querySelector(`[data-editor-id=${editorOptions.dataEditorId}]`);
 
   const duolingoToolbar = [
     "bold",
