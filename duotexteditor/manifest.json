@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Duolingo Text Editor",
-  "version": "0.2",
+  "version": "0.2.1",
   "description": "Simplifies the formatting of comments and posts. Provides a preview.",
   "content_scripts": [
     {
