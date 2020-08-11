@@ -4,8 +4,8 @@ import clearEditorOnSubmit from "./on-submit";
 
 const EasyMDE = require("easymde_duolingo");
 
-export default function createEditor(id, element) {
-  const target = document.querySelector(`#${id}`);
+export default function createEditor(editorOptions) {
+  const target = document.querySelector(`#${editorOptions.id}`);
 
   const duolingoToolbar = [
     "bold",
@@ -103,10 +103,10 @@ export default function createEditor(id, element) {
 
   easyMDE.codemirror.on("change", () => {
     // eslint-disable-next-line no-param-reassign
-    element.innerHTML = element.value;
+    editorOptions.element.innerHTML = editorOptions.element.value;
     const event = document.createEvent("UIEvents");
     event.initUIEvent("change", true, true);
-    element.dispatchEvent(event);
+    editorOptions.element.dispatchEvent(event);
   });
 
   function clearEditor() {
@@ -116,7 +116,9 @@ export default function createEditor(id, element) {
 
   clearEditorOnSubmit(target, clearEditor);
 
-  easyMDE.codemirror.focus();
+  if (editorOptions.focus) {
+    easyMDE.codemirror.focus();
+  }
 
   return easyMDE;
 }

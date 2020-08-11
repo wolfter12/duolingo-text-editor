@@ -11,7 +11,15 @@ export default class EditorsManager {
         const id = `ta${Date.now()}`;
         // eslint-disable-next-line no-param-reassign
         textarea.id = id;
-        createEditor(id, textarea);
+        const newEditorOptions = {
+          id,
+          element: textarea,
+          focus: false,
+        };
+        if (this.editors.size) {
+          newEditorOptions.focus = true;
+        }
+        createEditor(newEditorOptions);
         this.editors.set(id, textarea);
       }
     });
