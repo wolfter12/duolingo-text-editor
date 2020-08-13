@@ -17,8 +17,8 @@ const optimization = () => {
 const plugins = () => {
   const base = [
     new MiniCssExtractPlugin(),
-    new CopyWebpackPlugin(
-      [
+    new CopyWebpackPlugin({
+      patterns: [
         {
           from: path.resolve(__dirname, "src/css/font-awesome/font-awesome.min.css"),
           to: path.resolve(__dirname, "duotexteditor/css"),
@@ -28,7 +28,7 @@ const plugins = () => {
           to: path.resolve(__dirname, "duotexteditor/fonts"),
         },
       ],
-    ),
+    }),
   ];
   return base;
 };
