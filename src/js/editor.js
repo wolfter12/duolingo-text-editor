@@ -114,7 +114,9 @@ export default function createEditor(editorOptions) {
     easyMDE.codemirror.clearHistory();
   }
 
-  clearEditorOnSubmit(target, clearEditor);
+  if (target.closest("._1KvMS")) {
+    clearEditorOnSubmit(target, clearEditor);
+  }
 
   if (editorOptions.focus) {
     easyMDE.codemirror.focus();

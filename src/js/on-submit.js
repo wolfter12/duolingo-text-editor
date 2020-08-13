@@ -6,9 +6,8 @@ const observerOptions = {
 };
 
 function getSubmitButton(target) {
-  const siblings = [...target.parentNode.children];
-  const parentOfButton = siblings.pop();
-  const submitButton = parentOfButton.querySelector("button");
+  const ancestor = target.closest("._1KvMS");
+  const submitButton = ancestor.querySelector("button._1qPrY._2pnz9._2NzLI.QHkFc");
   return submitButton;
 }
 
