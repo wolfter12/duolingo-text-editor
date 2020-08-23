@@ -1,5 +1,12 @@
 @import "~easymde_duolingo/dist/easymde.min.css";
 
+$selection-background: #318efd;
+$selection-color: #ffffff;
+$selection-unfocus-background: #c5c5c5;
+$selection-unfocus-color: #000000;
+$preview-color: #4c4c4c;
+$placeholder-color: #afafaf;
+
 /* BASICS */
 
 .CodeMirror {
@@ -47,16 +54,12 @@ i.fa::before {
   font-family: FontAwesome !important;
 }
 
-.rotate-90 {
-  transform: rotate(90deg);
-}
-
 /* PREVIEW THEME */
 
 .editor-preview {
   padding: 15px;
   background: white;
-  color: #4c4c4c;
+  color: $preview-color;
 }
 
 .editor-preview p {
@@ -90,58 +93,69 @@ i.fa::before {
   margin: 0;
 }
 
-.editor-preview h1::before {
-  content: "<h1>";
-}
-
-.editor-preview h1::after {
-  content: "<h1>";
+.editor-preview h1 {
+  ::before {
+    content: "<h1>";
+  }
+  ::after {
+    content: "</h1>";
+  }
 }
 
 .editor-preview h2 {
-  color: #4c4c4c;
+  color: $preview-color;
   font-size: 24px;
   font-weight: 700;
-  line-height: 1;
-  margin: 0 0 18px 0;
+  line-height: 26px;
+  margin: 0 0 25px 0;
 }
 
 .editor-preview h3 {
   font-size: 15px;
   font-weight: 700;
-  text-transform: uppercase;
+  line-height: 22px;
   margin: 0 0 10px 0;
+  text-transform: uppercase;
 }
 
 .editor-preview h4 {
-  color: #4c4c4c;
+  color: $preview-color;
   font-size: 18px;
   font-weight: 700;
+  line-height: 22px;
   margin: 0 0 10px 0;
 }
 
 .editor-preview h5 {
   font-size: 15px;
   font-weight: 700;
+  line-height: 22px;
   margin: 0 0 10px 0;
 }
 
 .editor-preview h6 {
-  color: #999;
+  color: #999999;
   font-size: 13px;
   font-weight: 700;
+  line-height: 22px;
   margin: 0;
   text-transform: uppercase;
 }
 
 .editor-preview ul {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 22px;
   list-style-type: disc;
   margin: 0 0 20px 20px;
 }
 
 .editor-preview ol {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 22px;
   list-style-type: decimal;
-  margin-left: 20px;
+  margin: 0 0 0 20px;
 }
 
 .editor-preview pre {
@@ -152,19 +166,20 @@ i.fa::before {
   margin: 0;
 }
 
-.editor-preview pre::before {
-  content: "<pre>";
-}
-
-.editor-preview pre::after {
-  content: "<pre>";
+.editor-preview pre {
+  ::before {
+    content: "<pre>";
+  }
+  ::after {
+    content: "</pre>";
+  }
 }
 
 /* STOP */
 
 .CodeMirror-selected {
-  background: #c5c5c5;
-  color: black;
+  background: $selection-unfocus-background;
+  color: $selection-unfocus-color;
 }
 
 .CodeMirror-focused .CodeMirror-selected,
@@ -172,8 +187,8 @@ span.CodeMirror-selectedtext,
 .CodeMirror-line::selection,
 .CodeMirror-line > span::selection,
 .CodeMirror-line > span > span::selection {
-  background: #318efd;
-  color: white;
+  background: $selection-color;
+  color: $selection-background;
 }
 
 .CodeMirror pre.CodeMirror-placeholder,
@@ -181,7 +196,7 @@ span.CodeMirror-selectedtext,
   font-size: 17px;
   font-weight: 500;
   line-height: 24px;
-  color: #afafaf;
+  color: $placeholder-color;
   opacity: 1;
 }
 
@@ -218,23 +233,20 @@ span.CodeMirror-selectedtext,
 .cm-s-duolingo .cm-comment::selection,
 .cm-s-duolingo .cm-hr::selection,
 .cm-s-duolingo .cm-link::selection {
-  background: #318efd;
-  color: white;
+  background: $selection-background;
+  color: $selection-color;
 }
 
 .cm-header,
 .cm-strong {
-  font-weight: normal;
+  font-weight: 400;
 }
 
 .cm-em {
   font-style: normal;
 }
 
-.cm-link {
-  text-decoration: none;
-}
-
+.cm-link,
 .cm-strikethrough {
   text-decoration: none;
 }
