@@ -94,10 +94,10 @@ i.fa::before {
 }
 
 .editor-preview h1 {
-  ::before {
+  &::before {
     content: "<h1>";
   }
-  ::after {
+  &::after {
     content: "</h1>";
   }
 }
@@ -167,10 +167,10 @@ i.fa::before {
 }
 
 .editor-preview pre {
-  ::before {
+  &::before {
     content: "<pre>";
   }
-  ::after {
+  &::after {
     content: "</pre>";
   }
 }
@@ -187,8 +187,8 @@ span.CodeMirror-selectedtext,
 .CodeMirror-line::selection,
 .CodeMirror-line > span::selection,
 .CodeMirror-line > span > span::selection {
-  background: $selection-color;
-  color: $selection-background;
+  background: $selection-background;
+  color: $selection-color;
 }
 
 .CodeMirror pre.CodeMirror-placeholder,
