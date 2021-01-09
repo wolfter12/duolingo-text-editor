@@ -2,6 +2,7 @@ import "../scss/style.scss";
 
 import clearEditorOnSubmit from "./on-submit";
 import highlight from "./highlight";
+import duolingoShortcuts from "./shortcuts";
 
 const EasyMDE = require("easymde_duolingo");
 
@@ -52,23 +53,6 @@ export default function createEditor(editorOptions) {
     "|",
     "preview",
   ];
-
-  const duolingoShortcuts = {
-    toggleBold: null,
-    toggleItalic: null,
-    drawLink: null,
-    toggleHeadingSmaller: null,
-    toggleHeadingBigger: null,
-    cleanBlock: null,
-    drawImage: null,
-    toggleBlockquote: null,
-    toggleOrderedList: null,
-    toggleUnorderedList: null,
-    toggleCodeBlock: null,
-    togglePreview: null,
-    toggleSideBySide: null,
-    toggleFullScreen: null,
-  };
 
   const easyMDE = new EasyMDE({
     element: target,
