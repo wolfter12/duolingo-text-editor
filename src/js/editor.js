@@ -3,6 +3,7 @@ import "../scss/style.scss";
 import clearEditorOnSubmit from "./on-submit";
 import highlight from "./highlight";
 import duolingoShortcuts from "./shortcuts";
+import newline from "./newline";
 
 const EasyMDE = require("easymde_duolingo");
 
@@ -32,17 +33,7 @@ export default function createEditor(editorOptions) {
     "unordered-list",
     "ordered-list",
     "|",
-    {
-      name: "new-line",
-      action: function addNewLine(editor) {
-        const cm = editor.codemirror;
-        const newLine = "  \n";
-        cm.replaceSelection(newLine);
-        cm.focus();
-      },
-      className: "fa fa-paragraph",
-      title: "New line",
-    },
+    newline,
     "horizontal-rule",
     "|",
     "link",
