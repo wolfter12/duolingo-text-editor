@@ -1,0 +1,16 @@
+export default {
+  toggleBold: null,
+  toggleItalic: null,
+  drawLink: null,
+  toggleHeadingSmaller: null,
+  toggleHeadingBigger: null,
+  cleanBlock: null,
+  drawImage: null,
+  toggleBlockquote: null,
+  toggleOrderedList: null,
+  toggleUnorderedList: null,
+  toggleCodeBlock: null,
+  togglePreview: null,
+  toggleSideBySide: null,
+  toggleFullScreen: null,
+};
