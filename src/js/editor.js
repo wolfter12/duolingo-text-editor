@@ -1,6 +1,7 @@
 import "../scss/style.scss";
 
 import clearEditorOnSubmit from "./on-submit";
+import highlight from "./highlight";
 
 const EasyMDE = require("easymde_duolingo");
 
@@ -24,12 +25,7 @@ export default function createEditor(editorOptions) {
         "heading-6",
       ],
     },
-    {
-      name: "highlight",
-      action: EasyMDE.toggleCodeBlock,
-      className: "fa fa-pencil",
-      title: "Highlight",
-    },
+    highlight,
     "|",
     "quote",
     "unordered-list",
